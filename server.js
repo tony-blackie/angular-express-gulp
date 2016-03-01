@@ -3,7 +3,7 @@ var users = require('./src/models/users.json');
 var express = require('express');
 var app = express();
 
-app.use(express.static('./public', {index: 'main.html'}));
+app.use(express.static('./public', {index: 'userList.html'}));
 
 app.get('/users', (req, res)=> {
 	res.json(users);

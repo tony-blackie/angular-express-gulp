@@ -1,20 +1,22 @@
 {
-  "name": "Quench",
+  "name": "angular-express",
   "version": "1.0.0",
   "description": "A Gulp file and project generator.",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Quench",
-  "license": "ISC",
+  "author": "tony-blackie",
+  "license": "MIT",
   "devDependencies": {
     "angular": "^1.5.0",
+    "angular-ui-router": "^0.2.18",
     "express": "^4.13.4",
     "gulp": "3.9.0",
     "gulp-babel": "5.1.0",
     "gulp-concat": "2.5.2",
     "gulp-plumber": "1.0.0",
-    "gulp-rename": "1.2.2"
+    "gulp-rename": "1.2.2",
+    "gulp-sourcemaps": "^1.6.0"
   }
 }

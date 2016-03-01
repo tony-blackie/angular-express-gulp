@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename');
 var babel = require('gulp-babel');
 var concat = require('gulp-concat');
+var sourcemaps = require('gulp-sourcemaps');
 
 
 gulp.task('styles', function(){
@@ -22,8 +23,9 @@ gulp.task('app', function(){
         console.log(error.message);
         this.emit('end');
     }}))
-    .pipe(concat('main.js'))
-    .pipe(babel())
+    .pipe(sourcemaps.init())
+    .pipe(concat('app.js'))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('public/app/'))
 });
 
