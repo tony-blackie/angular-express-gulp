@@ -2,5 +2,5 @@
     "use strict";
 
     angular
-        .module('user-list', []);
+        .module('user-list', ['ui.router']);
 })();
