@@ -2,8 +2,8 @@
     "use strict";
 
     angular
-        .module('user-list', ['ui.router'])
-        .config('userListRoutes', userListRoutes);
+        .module('app.users')
+        .config(userListRoutes);
 
     userListRoutes.$inject = ['$stateProvider', '$urlRouterProvider'];
 
@@ -13,8 +13,12 @@
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: '../user-list.html',
+                template: '<div>'+
+                '<div style="background-color: red; display: block; width: 50px; height: 50px;"' +
+                'ng-click="userListCtrl.getSomeList()"></div>' +
+                '</div>',
+                //templateUrl: '../src/app/user-list/user-list.html',
                 controller: 'UserListController as userListCtrl'
-            })
+            });
     }
 })();

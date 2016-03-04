@@ -2,7 +2,7 @@
 	"use strict";
 
 	angular
-		.module('user-list')
+		.module('app.users')
 		.controller('UserListController', UserListController);
 
 	function UserListController() {

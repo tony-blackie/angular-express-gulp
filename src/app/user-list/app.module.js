@@ -2,5 +2,5 @@
     "use strict";
 
     angular
-        .module('app.users', ['ui.router']);
+        .module('app', ['app.users']);
 })();
