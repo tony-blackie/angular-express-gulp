@@ -24,9 +24,9 @@ phantomjs
 ### Run
 
 ```
-1. _Run tests_: karma start
-2. _Run build_: gulp app
-3. _Run server_: node sever.js (or _nodemon server.js_ for autoreload, if you have it installed globally)
+1. Run tests: karma start
+2. Run build: gulp app
+3. Run server: nodemon server.js (you can use 'node server.js', but autoreload won't work)
 ```
 
 ### Troubleshooting
