@@ -4,7 +4,13 @@ var gulp = require('gulp'),
 var babel = require('gulp-babel');
 var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
+var nodemon = require('gulp-nodemon');
 
+gulp.task('server', function () {
+  nodemon({
+    script: 'server.js'
+  })
+});
 
 gulp.task('styles', function(){
   gulp.src(['src/styles/**/*.scss'])
@@ -17,7 +23,7 @@ gulp.task('styles', function(){
 });
 
 gulp.task('app', function(){
-  return gulp.src(['src/app/**/*.module.js', 'src/app/**/*.js'])
+  return gulp.src(['src/app/**/*.module.js', 'src/app/**/*.js', '!src/app/**/*.spec.js'])
     .pipe(plumber({
       errorHandler: function (error) {
         console.log(error.message);
@@ -30,6 +36,9 @@ gulp.task('app', function(){
 });
 
 gulp.task('default', function(){
-  gulp.watch("src/styles/**/*.css", ['styles']);
+  gulp.start('app');
+  gulp.start('styles');
+  gulp.start('server');
   gulp.watch("src/app/**/*.js", ['app']);
+  gulp.watch("src/styles/**/*.css", ['styles']);
 });

@@ -11,6 +11,7 @@
 			getSomeList: getSomeList
 		});
 
+
 		function getSomeList() {
 			alert('8');
 		}
